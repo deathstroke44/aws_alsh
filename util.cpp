@@ -2,6 +2,54 @@
 
 using namespace std;
 
+
+
+
+int readFVecsFromExternal(
+	int   n,							// number of data/query objects
+	int   d,			 				// dimensionality
+	const char *fname,					// address of data/query set
+	float **data) {
+  FILE *infile = fopen(fname, "rb");
+  if (infile == NULL) {
+    std::cout << "File not found" << std::endl;
+    return 1;
+  }
+  
+  int rowCt = 0;
+  int dimen;
+  while (true) {
+    if (fread(&dimen, sizeof(int), 1, infile) == 0) {
+      break;
+    }
+    if (dimen != d) {
+      std::cout << "N and actual dimension mismatch" << std::endl;
+      return 1;
+    }
+    std::vector<float> v(d);
+    if(fread(v.data(), sizeof(float), dimen, infile) == 0) {
+      std::cout << "Error when reading" << std::endl;
+    };
+    
+    for (int i=0; i<d; i++) {
+      data[rowCt][i] = v[i];
+    }
+
+    rowCt++;
+    
+    if (n != -1 && rowCt >= n) {
+      break;
+    }
+  }
+  // std::cout<<"Row count test: "<<rowCt<<std::endl;
+
+  if (fclose(infile)) {
+    std::cout << "Could not close data file" << std::endl;
+	return 1;
+  }
+  return 0;
+}
+
 // -----------------------------------------------------------------------------
 int read_data(						// read data/query set from disk
 	int   n,							// number of data/query objects
@@ -58,6 +106,56 @@ int read_ground_truth(				// read ground truth results from disk
 	}
 	fclose(fp);
 
+	return 0;
+}
+
+// -----------------------------------------------------------------------------
+int read_ground_truthV2(				// read ground truth results from disk
+	int qn,
+	int d,								// number of query objects
+	const char *fname,					// address of truth set
+	Result **R,
+	float **data,
+	float **query)							// ground truth results (return)
+{
+	FILE *infile = fopen(fname, "rb");
+	if (infile == NULL) {
+		std::cout << "File not found" << std::endl;
+		return 1;
+	}
+	
+	int rowCt = 0;
+	int dimen;
+	while (true) {
+		if (fread(&dimen, sizeof(int), 1, infile) == 0) {
+			break;
+		}
+		if (dimen != MAXK) {
+			std::cout << "N and actual dimension mismatch" << std::endl;
+			return 1;
+		}
+		std::vector<int> v(MAXK);
+		if(fread(v.data(), sizeof(int), dimen, infile) == 0) {
+			std::cout << "Error when reading" << std::endl;
+		};
+		
+		for (int i=0; i<MAXK; i++) {
+			R[rowCt][i].id_ = v[i]+1;
+			R[rowCt][i].key_ = calc_l2_dist(d, data[rowCt], query[v[i]]);
+		}
+
+		rowCt++;
+		
+		if (qn != -1 && rowCt >= qn) {
+			break;
+		}
+	}
+	// std::cout<<"Row count test: "<<rowCt<<std::endl;
+
+	if (fclose(infile)) {
+		std::cout << "Could not close data file" << std::endl;
+		return 1;
+	}
 	return 0;
 }
 

@@ -18,11 +18,26 @@ int read_data(						// read data set from disk
 	const char *fname,					// address of data
 	Scalar **data);						// data (return)
 
+int readFVecsFromExternal(						// read data set from disk
+	int   n,							// number of data points
+	int   d,							// dimensionality
+	const char *fname,					// address of data
+	Scalar **data);						// data (return)
+
 // -----------------------------------------------------------------------------
 int read_ground_truth(				// read ground truth results from disk
 	int    qn,							// number of query objects
 	const  char *fname,					// address of truth set
 	Result **R);						// ground truth results (return)
+
+// -----------------------------------------------------------------------------
+int read_ground_truthV2(				// read ground truth results from disk
+	int    qn,
+	int d,							// number of query objects
+	const  char *fname,					// address of truth set
+	Result **R,
+	float **data,
+	float **query);						// ground truth results (return)
 
 // -----------------------------------------------------------------------------
 Scalar calc_inner_product(			// calc inner product
