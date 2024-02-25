@@ -2,58 +2,58 @@
 
 using namespace std;
 
-bool GROUND_TRUTH_INNER_PRODUCT_REGISTED = MyCallbackRegister::registerCallback("ground_truth_inner_product", 
-		"n qn d dataset_filename queryset_filename output_filename", [&](){
-	using namespace MyCallbackRegister;
-	int n = algAs<int>("n");
-	int qn = algAs<int>("qn");
-	int d = algAs<int>("d");
-	string output_filename = algAs<string>("output_filename");
+// bool GROUND_TRUTH_INNER_PRODUCT_REGISTED = MyCallbackRegister::registerCallback("ground_truth_inner_product", 
+// 		"n qn d dataset_filename queryset_filename output_filename", [&](){
+// 	using namespace MyCallbackRegister;
+// 	int n = algAs<int>("n");
+// 	int qn = algAs<int>("qn");
+// 	int d = algAs<int>("d");
+// 	string output_filename = algAs<string>("output_filename");
 
-	const Scalar** data = algAs<const Scalar**>("dataset");
-	const Scalar** query = algAs<const Scalar**>("queryset");
-	ground_truth_inner_product(n, qn, d, data, query, output_filename.c_str());
-});
+// 	const Scalar** data = algAs<const Scalar**>("dataset");
+// 	const Scalar** query = algAs<const Scalar**>("queryset");
+// 	ground_truth_inner_product(n, qn, d, data, query, output_filename.c_str());
+// });
 
-bool GROUND_TRUTH_WEIGHTED_DISTANCE_REGISTED = MyCallbackRegister::registerCallback("ground_truth_weighted_distance", 
-		"n qn d dataset_filename weight_filename queryset_filename output_filename", [&](){
-	using namespace MyCallbackRegister;
-	int n = algAs<int>("n");
-	int qn = algAs<int>("qn");
-	int d = algAs<int>("d");
-	string output_filename = algAs<string>("output_filename");
+// bool GROUND_TRUTH_WEIGHTED_DISTANCE_REGISTED = MyCallbackRegister::registerCallback("ground_truth_weighted_distance", 
+// 		"n qn d dataset_filename weight_filename queryset_filename output_filename", [&](){
+// 	using namespace MyCallbackRegister;
+// 	int n = algAs<int>("n");
+// 	int qn = algAs<int>("qn");
+// 	int d = algAs<int>("d");
+// 	string output_filename = algAs<string>("output_filename");
 
-	const Scalar** data = algAs<const Scalar**>("dataset");
-	const Scalar** weight = algAs<const Scalar**>("weightset");
-	const Scalar** query = algAs<const Scalar**>("queryset");
-	ground_truth_weighted_distance(n, qn, d, data, query, weight, output_filename.c_str());
-});
+// 	const Scalar** data = algAs<const Scalar**>("dataset");
+// 	const Scalar** weight = algAs<const Scalar**>("weightset");
+// 	const Scalar** query = algAs<const Scalar**>("queryset");
+// 	ground_truth_weighted_distance(n, qn, d, data, query, weight, output_filename.c_str());
+// });
 
-bool GROUND_TRUTH_ANGLE_REGISTED = MyCallbackRegister::registerCallback("ground_truth_angle", 
-		"n qn d dataset_filename queryset_filename output_filename", [&](){
-	using namespace MyCallbackRegister;
-	int n = algAs<int>("n");
-	int qn = algAs<int>("qn");
-	int d = algAs<int>("d");
-	string output_filename = algAs<string>("output_filename");
+// bool GROUND_TRUTH_ANGLE_REGISTED = MyCallbackRegister::registerCallback("ground_truth_angle", 
+// 		"n qn d dataset_filename queryset_filename output_filename", [&](){
+// 	using namespace MyCallbackRegister;
+// 	int n = algAs<int>("n");
+// 	int qn = algAs<int>("qn");
+// 	int d = algAs<int>("d");
+// 	string output_filename = algAs<string>("output_filename");
 
-	const Scalar** data = algAs<const Scalar**>("dataset");
-	const Scalar** query = algAs<const Scalar**>("queryset");
-	ground_truth_angle(n, qn, d, data, query, output_filename.c_str());
-});
+// 	const Scalar** data = algAs<const Scalar**>("dataset");
+// 	const Scalar** query = algAs<const Scalar**>("queryset");
+// 	ground_truth_angle(n, qn, d, data, query, output_filename.c_str());
+// });
 
-bool GROUND_TRUTH_FURTHEST_REGISTED = MyCallbackRegister::registerCallback("ground_truth_furthest", 
-		"n qn d dataset_filename queryset_filename output_filename", [&](){
-	using namespace MyCallbackRegister;
-	int n = algAs<int>("n");
-	int qn = algAs<int>("qn");
-	int d = algAs<int>("d");
-	string output_filename = algAs<string>("output_filename");
+// bool GROUND_TRUTH_FURTHEST_REGISTED = MyCallbackRegister::registerCallback("ground_truth_furthest", 
+// 		"n qn d dataset_filename queryset_filename output_filename", [&](){
+// 	using namespace MyCallbackRegister;
+// 	int n = algAs<int>("n");
+// 	int qn = algAs<int>("qn");
+// 	int d = algAs<int>("d");
+// 	string output_filename = algAs<string>("output_filename");
 
-	const Scalar** data = algAs<const Scalar**>("dataset");
-	const Scalar** query = algAs<const Scalar**>("queryset");
-	ground_truth_angle(n, qn, d, data, query, output_filename.c_str());
-});
+// 	const Scalar** data = algAs<const Scalar**>("dataset");
+// 	const Scalar** query = algAs<const Scalar**>("queryset");
+// 	ground_truth_angle(n, qn, d, data, query, output_filename.c_str());
+// });
 
 // -----------------------------------------------------------------------------
 int ground_truth_inner_product(					// find the ground truth results
