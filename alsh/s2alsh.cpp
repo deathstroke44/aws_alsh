@@ -29,6 +29,13 @@ S2ALSH::~S2ALSH()
 std::vector<uint64_t> S2ALSH::hash_data(const Scalar* data)
 {
     std::vector<uint64_t> ret;
+    bool flag=true;
+    FILE* fp;
+    fp = fopen("projection.txt", "a+");
+    // fprintf(fp, "Data: ");
+    // for(int i=0;i<dim;i++) {
+    //     if(flag) fprintf(fp, "%f ", data[i]);
+    // }
     for(int l=0;l<L;l++){
         uint64_t sigl = 0;
         for(int k=0;k<K;k++){
@@ -39,9 +46,11 @@ std::vector<uint64_t> S2ALSH::hash_data(const Scalar* data)
 				double cosUx = cos(Ux);
 				double sinUx = sin(Ux);
 				projection += cosUx*a[l*K+k][i] + sinUx*a[l*K+k][i+dim];
+                // if(flag) fprintf(fp, "Projection temp --%f, %f, %f, %f, %f, %f --\n", x, a[l*K+k][i], cosUx, sinUx, cosUx*a[l*K+k][i] + sinUx*a[l*K+k][i+dim], projection);
             }
 
             sigl = hash_combine(sigl, uint64_t(projection > 0));
+            // if(flag) fprintf(fp, "projection final --%f, %d, %d --\n", projection, sigl);
         }
         ret.push_back(sigl);
     }

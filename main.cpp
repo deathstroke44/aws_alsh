@@ -106,7 +106,7 @@ int main(int argc, char **argv)
 	// 		return 1;
 	// 	}
 	// }
-
+	cout << "finishing reading data, query" << endl;
 	if(groundtruthFilename!=""){
 		resultArr = unique_ptr<NDArray<2, Result>>(new NDArray<2, Result>({(size_t)qn, (size_t)MAXK}));
 		results = resultArr->to_ptr();

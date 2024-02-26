@@ -12,6 +12,9 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <cassert>
+#include<bits/stdc++.h>
+using namespace std;
+using namespace std::chrono;
 
 
 inline bool read_sigs(const std::string& filename, int N, int K, int L, std::vector<std::vector<uint64_t>>& sigs)
@@ -58,7 +61,7 @@ inline bool read_sigs(const std::string& filename, int N, int K, int L, std::vec
 
 //hp: const float *-> [signatures] with the length max(Ls)*max(Ks)
 template<class PF> 
-void compute_signatures(
+double compute_signatures(
     int n, 
     int d, 
     const float** data, 
@@ -82,20 +85,24 @@ void compute_signatures(
 
     std::vector<UNIQUE_FP> fps;
     UNIQUE_FP fp(fopen(hashCacheName.c_str(), "wb"), &fclose);
-
+    clock_t t; 
+    t = clock();
     for(int i=0;i<n;i++){
         const float* datai = data[i];
         std::vector<uint64_t> datasig = hp(datai);
         // datasigs should have the length maxK*maxL
 
         if(i%10000==0){
-            printf("%d-th signatures\n", i);
+            // printf("%d-th signatures\n", i);
         }
 
         assert(datasig.size()==nHashers);
 
         datasigs.emplace_back(datasig);
     }
+    t = clock() - t; 
+    double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds 
+
 
     fwrite(&nHashers, sizeof(int), 1, fp.get());
     fwrite(&n, sizeof(int), 1, fp.get());
@@ -107,12 +114,13 @@ void compute_signatures(
 
         fwrite(&tmp[0], sizeof(uint64_t), n, fp.get());
     }
+    return time_taken;
 }
 
 
 
 template<class QF> 
-void compute_query_signatures(
+double compute_query_signatures(
     int qn, 
     int d, 
     const float** query,
@@ -135,6 +143,9 @@ void compute_query_signatures(
 
     std::vector<UNIQUE_FP> fps;
     UNIQUE_FP fp(fopen(hashCacheName.c_str(), "wb"), &fclose);
+    auto start = high_resolution_clock::now();
+    clock_t t; 
+    t = clock();
 
     for(int i=0;i<qn;i++){
         const float* queryi = query[i];
@@ -151,6 +162,8 @@ void compute_query_signatures(
 
         querysigs.emplace_back(querysig);   
     }
+    t = clock() - t; 
+    double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds 
 
 
     fwrite(&nHashers, sizeof(int), 1, fp.get());
@@ -163,6 +176,7 @@ void compute_query_signatures(
 
         fwrite(&tmp[0], sizeof(uint64_t), qn, fp.get());
     }
+    return time_taken;
 }
 
 
@@ -201,16 +215,20 @@ void fraction_recall(
 
     std::vector<std::vector<uint64_t> > dataSigs;
     std::vector<std::vector<uint64_t> > querySigs;
+    double indexing_time = 0;
+    
 
     // fprintf(fp, "--%d, %d, %d--\n", n, qn, d);
+    // fprintf(fp, "--%f, %f, %f--\n", data[0][0], data[0][1], data[0][2]);
+    // fprintf(fp, "--%f, %f, %f--\n", data[1][0], data[1][1], data[1][2]);
 
     for(int K:Ks){
         for(int L:Ls){
-            printf("K=%d, L=%d\n", K, L);
-            fprintf(fp, "K=%d, L=%d\n", K, L);
+            // printf("test K=%d, L=%d\n", K, L);
+            // fprintf(fp, "K=%d, L=%d\n", K, L);
 
             if(!read_sigs(dataHashName, n, K, L, dataSigs)){
-                compute_signatures(n, d, data, hp, Ks, Ls, dataHashName);
+                indexing_time += compute_signatures(n, d, data, hp, Ks, Ls, dataHashName);
                 bool isReadSuccessful = read_sigs(dataHashName, n, K, L, dataSigs);
                 assert(isReadSuccessful);
             }
@@ -222,29 +240,36 @@ void fraction_recall(
                     uint64_t sigij = dataSigs[i][j];
 
                     invLists[j][sigij].push_back(i);
+                    // fprintf(fp, "data=%d, L=%d sigij=%d\n", i, j, sigij);
                 }
             }
 
 
+
             if(!read_sigs(queryHashName, qn, K, L, querySigs)){
-                compute_query_signatures(qn, d, query, weight, hq, Ks, Ls, queryHashName);
+                indexing_time += compute_query_signatures(qn, d, query, weight, hq, Ks, Ls, queryHashName);
                 bool isReadSuccessful = read_sigs(queryHashName, qn, K, L, querySigs);
                 assert(isReadSuccessful);
             }
 
             double step = 0.005;
             int stepn = step*n;
+            // printf("test1 K=%d, L=%d\n", K, L);
+            float recall = 0.0f;
+            float map = 0.0f;
+
             for(int i=0;i<qn;i++){
                 //compute totCnts
                 auto& qsigi = querySigs[i];
-
+                printf("test2 K=%d, L=%d, qn=%d\n", K, L, i);
                 std::unordered_set<int> checked;
-                MinK_List que(10);
-                fprintf(fp, "0, 0\n");
+                MinK_List que(MAXK);
+                // fprintf(fp, "00, 00\n");
 
                 for(int j=0;j<L;j++){
                     // printf("%d, %d\n", j, checked.size());
-                    uint64_t qsigij  = qsigi[j]; 
+                    uint64_t qsigij  = qsigi[j];
+                    // fprintf(fp, "Q=%d, Signature=%d\n", i, qsigi); 
                     //for each hashTable, check
                     auto it = invLists[j].find(qsigij);
                     if(it!=invLists[j].end()){
@@ -256,15 +281,34 @@ void fraction_recall(
                                 checked.insert(dataid);
                                 que.insert(dw, dataid);
 
-                                if(checked.size()%stepn==1){
-                                    float recall = calc_recall(10, results[i], &que);
-                                    fprintf(fp, "%f, %f\n", checked.size()*1./n, recall);
-                                }
+                                // if(checked.size()%stepn==1){
+                                //     float recall = calc_recall(10, results[i], &que);
+                                //     printf("test2 recall=%f\n", recall);
+                                //     // fprintf(fp, "Recall %f, %f\n", checked.size()*1./n, recall);
+                                // }
                             }
                         }
                     }
                 }
+                // fprintf(fp, "K=%d, L=%d, Q=%d, Candidate=%d\n", K, L, i, checked.size());
+                // int ln = que.size()-1;
+                // fprintf(fp, "%dth  query: ", i);
+                // while (ln >= 0) {
+                //     fprintf(fp, "%d %f || ", que.ith_id(ln), que.ith_key(ln));
+                //     ln--;
+                // }
+                // fprintf(fp, "\n");
+                // ln = que.size()-1;
+                // while (ln >= 0) {
+                //     fprintf(fp, "%d %f || ", results[i][ln].id_, results[i][ln].key_);
+                //     ln--;
+                // }
+                // fprintf(fp, "\n");
+                recall += calc_recall(MAXK, results[i], &que);
+                map += calc_map(MAXK, results[i], &que);
+                
             }
+            fprintf(fp, "L=%d K=%d MAXK:%d recall: %f map: %f indexing time: %f\n", L, K, MAXK, recall/qn, map/qn, indexing_time);
         }
     }
 }

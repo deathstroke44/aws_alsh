@@ -70,6 +70,12 @@ Scalar calc_recall(					// calc recall (percentage)
 	MaxK_List *list);					// results returned by algorithms
 
 // -----------------------------------------------------------------------------
+float calc_map(					// calc map (percentage)
+	int   k,							// top-k value
+	const Result *R,					// ground truth results
+	MinK_List *list);					// results returned by algorithms
+
+// -----------------------------------------------------------------------------
 int get_hits(						// get the number of hits between two ID list
 	int   k,							// top-k value
 	int   t,							// top-t value

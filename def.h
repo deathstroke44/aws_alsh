@@ -8,7 +8,7 @@ struct Result {
     int id_; // object id
 };
 
-const int MAXK = 100;
+const int MAXK = 20;
 
 const Scalar E = 2.7182818F;
 const Scalar PI = 3.141592654F;

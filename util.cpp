@@ -1,6 +1,7 @@
 #include "util.h"
-
+#include<bits/stdc++.h>
 using namespace std;
+using namespace std::chrono;
 
 
 
@@ -141,7 +142,7 @@ int read_ground_truthV2(				// read ground truth results from disk
 		
 		for (int i=0; i<MAXK; i++) {
 			R[rowCt][i].id_ = v[i]+1;
-			R[rowCt][i].key_ = calc_l2_dist(d, data[rowCt], query[v[i]]);
+			R[rowCt][i].key_ = calc_l2_dist(d, query[rowCt], data[v[i]]);
 		}
 
 		rowCt++;
@@ -258,13 +259,49 @@ float calc_recall(					// calc recall (percentage)
 	const Result *R,					// ground truth results
 	MinK_List *list)					// results returned by algorithms
 {
-	int i = list->size()-1;
-	int last = k - 1;
-	//loop until list->ithkey <= R[last].key
-	while (i >= 0 && R[last].key_ - list->ith_key(i) < -EPS) {
-		i--;
+	int cnt=0;
+	for (int p=0; p<list->size();p++){
+		for (int r=0;r<k;r++) {
+			if(list->ith_id(p)+1==R[r].id_) {
+				cnt++;
+				break;
+			}
+		}
 	}
-	return (i + 1) * 100.0f / k;
+	return cnt * 1.0f / k;
+}
+
+// -----------------------------------------------------------------------------
+float calc_map(					// calc map (percentage)
+	int   k,							// top-k value
+	const Result *R,					// ground truth results
+	MinK_List *list)					// results returned by algorithms
+{
+	int cnt=0;
+	int _k =k;
+	k=min(list->size(),k);
+	int ap=0;
+	for (int p=0; p<k;p++){
+		bool isR_kExact = false;
+		for (int r=0;r<k;r++) {
+			if(list->ith_id(p)+1==R[r].id_) {
+				isR_kExact=true;
+			}
+		}
+		if (isR_kExact) {
+			int ct = 0;
+			for (int j=0; j<p; j++) {
+				for (int jj=0; jj<p; jj++) {
+					if (list->ith_id(j)+1==R[jj].id_) {
+						ct++;
+						break;
+					}
+				}
+			}
+			ap += (double)ct/p;
+		}
+	}
+	return ap * 1.0f / _k;
 }
 
 // -----------------------------------------------------------------------------
