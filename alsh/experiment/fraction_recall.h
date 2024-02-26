@@ -261,7 +261,7 @@ void fraction_recall(
             for(int i=0;i<qn;i++){
                 //compute totCnts
                 auto& qsigi = querySigs[i];
-                printf("test2 K=%d, L=%d, qn=%d\n", K, L, i);
+                // printf("test2 K=%d, L=%d, qn=%d\n", K, L, i);
                 std::unordered_set<int> checked;
                 MinK_List que(MAXK);
                 // fprintf(fp, "00, 00\n");
