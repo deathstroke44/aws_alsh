@@ -1,12 +1,12 @@
 ls ../build
 
-src=audio
+src=cifar
 id=${src}1
 dataset=/data/kabir/similarity-search/dataset/${src}/base.fvecs
 query=/data/kabir/similarity-search/dataset/${src}/query.fvecs
 groundtruth=/data/kabir/similarity-search/dataset/${src}/groundtruth.ivecs
-N=53387
-DD=192
+N=50000
+DD=512
 QN=200
 DATA_HASH=${id}_data_hash.dh
 QUERY_HASH=${id}_query_hash.dh
