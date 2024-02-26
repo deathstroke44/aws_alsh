@@ -257,7 +257,8 @@ void fraction_recall(
             // printf("test1 K=%d, L=%d\n", K, L);
             float recall = 0.0f;
             float map = 0.0f;
-
+            clock_t t; 
+            t = clock();
             for(int i=0;i<qn;i++){
                 //compute totCnts
                 auto& qsigi = querySigs[i];
@@ -308,7 +309,9 @@ void fraction_recall(
                 map += calc_map(MAXK, results[i], &que);
                 
             }
-            fprintf(fp, "L=%d K=%d MAXK:%d recall: %f map: %f indexing time: %f\n", L, K, MAXK, recall/qn, map/qn, indexing_time);
+            t = clock() - t; 
+            double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds 
+            fprintf(fp, "L=%d K=%d MAXK:%d recall: %f map: %f indexing time: %f search time: %f\n", L, K, MAXK, recall/qn, map/qn, indexing_time, time_taken);
         }
     }
 }
