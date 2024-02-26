@@ -31,7 +31,7 @@ std::vector<uint64_t> S2ALSH::hash_data(const Scalar* data)
     std::vector<uint64_t> ret;
     bool flag=true;
     FILE* fp;
-    fp = fopen("projection.txt", "a+");
+    // fp = fopen("projection.txt", "a+");
     // fprintf(fp, "Data: ");
     // for(int i=0;i<dim;i++) {
     //     if(flag) fprintf(fp, "%f ", data[i]);
