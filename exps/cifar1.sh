@@ -1,4 +1,4 @@
-ls ../build
+cd ../build
 
 src=cifar
 id=${src}1

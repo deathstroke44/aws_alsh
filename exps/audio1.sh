@@ -1,4 +1,4 @@
-ls ../build
+cd ../build
 
 src=audio
 id=${src}1
