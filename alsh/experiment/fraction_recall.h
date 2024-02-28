@@ -212,7 +212,7 @@ void fraction_recall(
     )
 {
     //try read sigs, if not success, compute from data
-    vector<int> betas={0.05,0.125,0.25,0.5};
+    vector<float> betas={0.05,0.125,0.25,0.5};
     for (int rrr=0;rrr<betas.size();rrr++) {
         std::vector<std::vector<uint64_t> > dataSigs;
         std::vector<std::vector<uint64_t> > querySigs;
