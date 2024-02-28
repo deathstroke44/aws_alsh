@@ -1,6 +1,6 @@
 cd ../build
 
-src=audio
+src=word2vec
 id=${src}1
 dataset=/data/kabir/similarity-search/dataset/${src}/base.fvecs
 query=/data/kabir/similarity-search/dataset/${src}/query.fvecs
