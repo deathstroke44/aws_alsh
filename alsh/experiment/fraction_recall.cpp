@@ -146,7 +146,7 @@ bool FRACTION_RECALL_S2ALSH_REGISTED = MyCallbackRegister::registerCallback("fra
             //weight unused
             return s2alsh.hash_query(query, weight);
         };
-        unique_ptr<FILE, decltype(&fclose)> fp(fopen(output_filename.c_str(), "w"), &fclose);
+        unique_ptr<FILE, decltype(&fclose)> fp(fopen(output_filename.c_str(), "a+"), &fclose);
 
         fraction_recall(n, qn, d, Ks, Ls, data, query, weight, results, hp, hq, fp.get(), data_hash_filename, query_hash_filename);
     });

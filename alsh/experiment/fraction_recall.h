@@ -253,7 +253,9 @@ void fraction_recall(
             }
 
             double step = 0.005;
+            double limit_percent = 0.25;
             int stepn = step*n;
+            int beta=limit_percent*n;
             // printf("test1 K=%d, L=%d\n", K, L);
             float recall = 0.0f;
             float map = 0.0f;
@@ -266,16 +268,25 @@ void fraction_recall(
                 std::unordered_set<int> checked;
                 MinK_List que(MAXK);
                 // fprintf(fp, "00, 00\n");
-
+                bool pruned= false;
                 for(int j=0;j<L;j++){
+                    if(pruned) {
+                        break;
+                    }
                     // printf("%d, %d\n", j, checked.size());
                     uint64_t qsigij  = qsigi[j];
                     // fprintf(fp, "Q=%d, Signature=%d\n", i, qsigi); 
                     //for each hashTable, check
                     auto it = invLists[j].find(qsigij);
                     if(it!=invLists[j].end()){
+                        if(pruned) {
+                            break;
+                        }
                         auto& postingList = it->second;
                         for(int dataid:postingList){
+                            if(pruned) {
+                                break;
+                            }
                             if(checked.find(dataid)==checked.end()){
                                 //not checked!
                                 float dw = calc_weighted_dist2(d, weight[i], query[i], data[dataid]);
@@ -287,6 +298,9 @@ void fraction_recall(
                                 //     printf("test2 recall=%f\n", recall);
                                 //     // fprintf(fp, "Recall %f, %f\n", checked.size()*1./n, recall);
                                 // }
+                                if (checked.size()>beta) {
+                                    pruned=true;
+                                }
                             }
                         }
                     }
@@ -306,12 +320,12 @@ void fraction_recall(
                 // }
                 // fprintf(fp, "\n");
                 recall += calc_recall(MAXK, results[i], &que);
-                map += calc_map(MAXK, results[i], &que);
+                // map += calc_map(MAXK, results[i], &que);
                 
             }
             t = clock() - t; 
             double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds 
-            fprintf(fp, "L=%d K=%d MAXK:%d recall: %f map: %f indexing time: %f search time: %f\n", L, K, MAXK, recall/qn, map/qn, indexing_time, time_taken);
+            fprintf(fp, "L=%d K=%d MAXK:%d recall: %f map: %f indexing time: %f search time: %f beta=%f\n", L, K, MAXK, recall/qn, map/qn, indexing_time, time_taken, limit_percent);
         }
     }
 }
