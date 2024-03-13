@@ -321,7 +321,7 @@ void fraction_recall(
                     // }
                     // fprintf(fp, "\n");
                     recall += calc_recall(MAXK, results[i], &que);
-                    // map += calc_map(MAXK, results[i], &que);
+                    map += calc_map(MAXK, results[i], &que);
                     
                 }
                 t = clock() - t; 

@@ -281,7 +281,7 @@ float calc_map(					// calc map (percentage)
 	int _k =k;
 	k=min(list->size(),k);
 	int ap=0;
-	for (int p=0; p<k;p++){
+	for (int p=1; p<=k;p++){
 		bool isR_kExact = false;
 		for (int r=0;r<k;r++) {
 			if(list->ith_id(p)+1==R[r].id_) {
