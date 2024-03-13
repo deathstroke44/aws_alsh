@@ -1,0 +1,150 @@
+L=300 K=1 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 168.496006
+L=300 K=2 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 166.674440
+L=300 K=3 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 191.646508
+L=300 K=4 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 185.493275
+L=300 K=5 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 183.645111
+L=300 K=6 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 189.785016
+L=300 K=7 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 185.878778
+L=300 K=8 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 178.172225
+L=300 K=9 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 174.395162
+L=300 K=10 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 168.687500
+L=300 K=11 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 164.661771
+L=300 K=12 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 155.939902
+L=300 K=13 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 157.356724
+L=300 K=14 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 153.274410
+L=300 K=15 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 137.119641
+L=300 K=16 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 136.509964
+L=300 K=17 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 145.995090
+L=300 K=18 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 143.693029
+L=300 K=19 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 136.401576
+L=300 K=20 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 133.383269
+L=300 K=21 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 130.354907
+L=300 K=22 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 125.216012
+L=300 K=23 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 119.234647
+L=300 K=24 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 118.303993
+L=300 K=25 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 121.627066
+L=300 K=26 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 119.713504
+L=300 K=27 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 115.459799
+L=300 K=28 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 111.318106
+L=300 K=29 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 106.799153
+L=300 K=30 MAXK:20 recall: 1.000000 map: -107374400.000000 indexing time: 21407.514590 search time: 103.607612
+L=300 K=1 MAXK:20 recall: 0.075500 map: 0.000000 indexing time: 0.000000 search time: 2.438716 beta=0.050000
+L=300 K=2 MAXK:20 recall: 0.091000 map: 0.000000 indexing time: 0.000000 search time: 2.396960 beta=0.050000
+L=300 K=3 MAXK:20 recall: 0.119250 map: 0.000000 indexing time: 0.000000 search time: 2.663244 beta=0.050000
+L=300 K=4 MAXK:20 recall: 0.138500 map: 0.000000 indexing time: 0.000000 search time: 2.853744 beta=0.050000
+L=300 K=5 MAXK:20 recall: 0.140000 map: 0.000000 indexing time: 0.000000 search time: 2.600064 beta=0.050000
+L=300 K=6 MAXK:20 recall: 0.145500 map: 0.000000 indexing time: 0.000000 search time: 2.660061 beta=0.050000
+L=300 K=7 MAXK:20 recall: 0.145500 map: 0.000000 indexing time: 0.000000 search time: 2.637291 beta=0.050000
+L=300 K=8 MAXK:20 recall: 0.145500 map: 0.000000 indexing time: 0.000000 search time: 2.597578 beta=0.050000
+L=300 K=9 MAXK:20 recall: 0.155500 map: 0.000000 indexing time: 0.000000 search time: 2.752164 beta=0.050000
+L=300 K=10 MAXK:20 recall: 0.160500 map: 0.000000 indexing time: 0.000000 search time: 2.703527 beta=0.050000
+L=300 K=11 MAXK:20 recall: 0.163000 map: 0.000000 indexing time: 0.000000 search time: 2.730205 beta=0.050000
+L=300 K=12 MAXK:20 recall: 0.192250 map: 0.000000 indexing time: 0.000000 search time: 2.947203 beta=0.050000
+L=300 K=13 MAXK:20 recall: 0.194500 map: 0.000000 indexing time: 0.000000 search time: 2.964066 beta=0.050000
+L=300 K=14 MAXK:20 recall: 0.204750 map: 0.000000 indexing time: 0.000000 search time: 2.993313 beta=0.050000
+L=300 K=15 MAXK:20 recall: 0.214500 map: 0.000000 indexing time: 0.000000 search time: 2.963717 beta=0.050000
+L=300 K=16 MAXK:20 recall: 0.213000 map: 0.000000 indexing time: 0.000000 search time: 3.047153 beta=0.050000
+L=300 K=17 MAXK:20 recall: 0.218750 map: 0.000000 indexing time: 0.000000 search time: 3.045218 beta=0.050000
+L=300 K=18 MAXK:20 recall: 0.218250 map: 0.000000 indexing time: 0.000000 search time: 3.279316 beta=0.050000
+L=300 K=19 MAXK:20 recall: 0.221000 map: 0.000000 indexing time: 0.000000 search time: 3.202131 beta=0.050000
+L=300 K=20 MAXK:20 recall: 0.221250 map: 0.000000 indexing time: 0.000000 search time: 3.214751 beta=0.050000
+L=300 K=21 MAXK:20 recall: 0.222000 map: 0.000000 indexing time: 0.000000 search time: 3.121030 beta=0.050000
+L=300 K=22 MAXK:20 recall: 0.227250 map: 0.000000 indexing time: 0.000000 search time: 2.948380 beta=0.050000
+L=300 K=23 MAXK:20 recall: 0.243000 map: 0.000000 indexing time: 0.000000 search time: 2.962872 beta=0.050000
+L=300 K=24 MAXK:20 recall: 0.251250 map: 0.000000 indexing time: 0.000000 search time: 3.077757 beta=0.050000
+L=300 K=25 MAXK:20 recall: 0.272500 map: 0.000000 indexing time: 0.000000 search time: 3.125758 beta=0.050000
+L=300 K=26 MAXK:20 recall: 0.288500 map: 0.000000 indexing time: 0.000000 search time: 3.188681 beta=0.050000
+L=300 K=27 MAXK:20 recall: 0.289000 map: 0.000000 indexing time: 0.000000 search time: 3.165632 beta=0.050000
+L=300 K=28 MAXK:20 recall: 0.304250 map: 0.000000 indexing time: 0.000000 search time: 3.291887 beta=0.050000
+L=300 K=29 MAXK:20 recall: 0.326250 map: 0.000000 indexing time: 0.000000 search time: 3.475031 beta=0.050000
+L=300 K=30 MAXK:20 recall: 0.343500 map: 0.000000 indexing time: 0.000000 search time: 3.261248 beta=0.050000
+L=300 K=1 MAXK:20 recall: 0.162500 map: 0.000000 indexing time: 0.000000 search time: 4.473021 beta=0.125000
+L=300 K=2 MAXK:20 recall: 0.182500 map: 0.000000 indexing time: 0.000000 search time: 5.205031 beta=0.125000
+L=300 K=3 MAXK:20 recall: 0.242250 map: 0.000000 indexing time: 0.000000 search time: 5.807792 beta=0.125000
+L=300 K=4 MAXK:20 recall: 0.259750 map: 0.000000 indexing time: 0.000000 search time: 5.893507 beta=0.125000
+L=300 K=5 MAXK:20 recall: 0.266750 map: 0.000000 indexing time: 0.000000 search time: 5.966730 beta=0.125000
+L=300 K=6 MAXK:20 recall: 0.276250 map: 0.000000 indexing time: 0.000000 search time: 6.088186 beta=0.125000
+L=300 K=7 MAXK:20 recall: 0.279000 map: 0.000000 indexing time: 0.000000 search time: 6.116898 beta=0.125000
+L=300 K=8 MAXK:20 recall: 0.279000 map: 0.000000 indexing time: 0.000000 search time: 6.264979 beta=0.125000
+L=300 K=9 MAXK:20 recall: 0.286250 map: 0.000000 indexing time: 0.000000 search time: 6.288145 beta=0.125000
+L=300 K=10 MAXK:20 recall: 0.297000 map: 0.000000 indexing time: 0.000000 search time: 6.441125 beta=0.125000
+L=300 K=11 MAXK:20 recall: 0.297500 map: 0.000000 indexing time: 0.000000 search time: 6.771292 beta=0.125000
+L=300 K=12 MAXK:20 recall: 0.371000 map: 0.000000 indexing time: 0.000000 search time: 7.567238 beta=0.125000
+L=300 K=13 MAXK:20 recall: 0.372250 map: 0.000000 indexing time: 0.000000 search time: 7.550264 beta=0.125000
+L=300 K=14 MAXK:20 recall: 0.392250 map: 0.000000 indexing time: 0.000000 search time: 7.169104 beta=0.125000
+L=300 K=15 MAXK:20 recall: 0.404750 map: 0.000000 indexing time: 0.000000 search time: 7.402787 beta=0.125000
+L=300 K=16 MAXK:20 recall: 0.402750 map: 0.000000 indexing time: 0.000000 search time: 7.225237 beta=0.125000
+L=300 K=17 MAXK:20 recall: 0.407250 map: 0.000000 indexing time: 0.000000 search time: 7.549101 beta=0.125000
+L=300 K=18 MAXK:20 recall: 0.413500 map: 0.000000 indexing time: 0.000000 search time: 7.403313 beta=0.125000
+L=300 K=19 MAXK:20 recall: 0.417000 map: 0.000000 indexing time: 0.000000 search time: 7.883138 beta=0.125000
+L=300 K=20 MAXK:20 recall: 0.417500 map: 0.000000 indexing time: 0.000000 search time: 7.396639 beta=0.125000
+L=300 K=21 MAXK:20 recall: 0.418250 map: 0.000000 indexing time: 0.000000 search time: 7.388612 beta=0.125000
+L=300 K=22 MAXK:20 recall: 0.427750 map: 0.000000 indexing time: 0.000000 search time: 7.437387 beta=0.125000
+L=300 K=23 MAXK:20 recall: 0.435000 map: 0.000000 indexing time: 0.000000 search time: 7.389186 beta=0.125000
+L=300 K=24 MAXK:20 recall: 0.454500 map: 0.000000 indexing time: 0.000000 search time: 7.600269 beta=0.125000
+L=300 K=25 MAXK:20 recall: 0.501500 map: 0.000000 indexing time: 0.000000 search time: 7.910071 beta=0.125000
+L=300 K=26 MAXK:20 recall: 0.528750 map: 0.000000 indexing time: 0.000000 search time: 8.159788 beta=0.125000
+L=300 K=27 MAXK:20 recall: 0.524750 map: 0.000000 indexing time: 0.000000 search time: 8.051006 beta=0.125000
+L=300 K=28 MAXK:20 recall: 0.518000 map: 0.000000 indexing time: 0.000000 search time: 7.922827 beta=0.125000
+L=300 K=29 MAXK:20 recall: 0.534500 map: 0.000000 indexing time: 0.000000 search time: 8.026042 beta=0.125000
+L=300 K=30 MAXK:20 recall: 0.546000 map: 0.000000 indexing time: 0.000000 search time: 7.910893 beta=0.125000
+L=300 K=1 MAXK:20 recall: 0.281000 map: 0.000000 indexing time: 0.000000 search time: 8.721364 beta=0.250000
+L=300 K=2 MAXK:20 recall: 0.305500 map: 0.000000 indexing time: 0.000000 search time: 9.120367 beta=0.250000
+L=300 K=3 MAXK:20 recall: 0.423250 map: 0.000000 indexing time: 0.000000 search time: 11.354838 beta=0.250000
+L=300 K=4 MAXK:20 recall: 0.433250 map: 0.000000 indexing time: 0.000000 search time: 11.652382 beta=0.250000
+L=300 K=5 MAXK:20 recall: 0.440250 map: 0.000000 indexing time: 0.000000 search time: 11.761720 beta=0.250000
+L=300 K=6 MAXK:20 recall: 0.461500 map: 0.000000 indexing time: 0.000000 search time: 12.211290 beta=0.250000
+L=300 K=7 MAXK:20 recall: 0.464500 map: 0.000000 indexing time: 0.000000 search time: 12.364935 beta=0.250000
+L=300 K=8 MAXK:20 recall: 0.464750 map: 0.000000 indexing time: 0.000000 search time: 12.281581 beta=0.250000
+L=300 K=9 MAXK:20 recall: 0.474000 map: 0.000000 indexing time: 0.000000 search time: 12.603126 beta=0.250000
+L=300 K=10 MAXK:20 recall: 0.499750 map: 0.000000 indexing time: 0.000000 search time: 12.958761 beta=0.250000
+L=300 K=11 MAXK:20 recall: 0.498500 map: 0.000000 indexing time: 0.000000 search time: 13.073834 beta=0.250000
+L=300 K=12 MAXK:20 recall: 0.582750 map: 0.000000 indexing time: 0.000000 search time: 14.124984 beta=0.250000
+L=300 K=13 MAXK:20 recall: 0.583500 map: 0.000000 indexing time: 0.000000 search time: 14.109490 beta=0.250000
+L=300 K=14 MAXK:20 recall: 0.603250 map: 0.000000 indexing time: 0.000000 search time: 14.218339 beta=0.250000
+L=300 K=15 MAXK:20 recall: 0.604000 map: 0.000000 indexing time: 0.000000 search time: 14.079155 beta=0.250000
+L=300 K=16 MAXK:20 recall: 0.609000 map: 0.000000 indexing time: 0.000000 search time: 14.016289 beta=0.250000
+L=300 K=17 MAXK:20 recall: 0.618250 map: 0.000000 indexing time: 0.000000 search time: 14.336255 beta=0.250000
+L=300 K=18 MAXK:20 recall: 0.632750 map: 0.000000 indexing time: 0.000000 search time: 14.661480 beta=0.250000
+L=300 K=19 MAXK:20 recall: 0.640500 map: 0.000000 indexing time: 0.000000 search time: 14.686939 beta=0.250000
+L=300 K=20 MAXK:20 recall: 0.651000 map: 0.000000 indexing time: 0.000000 search time: 14.717771 beta=0.250000
+L=300 K=21 MAXK:20 recall: 0.657750 map: 0.000000 indexing time: 0.000000 search time: 15.056701 beta=0.250000
+L=300 K=22 MAXK:20 recall: 0.665250 map: 0.000000 indexing time: 0.000000 search time: 15.009274 beta=0.250000
+L=300 K=23 MAXK:20 recall: 0.665250 map: 0.000000 indexing time: 0.000000 search time: 14.964938 beta=0.250000
+L=300 K=24 MAXK:20 recall: 0.707000 map: 0.000000 indexing time: 0.000000 search time: 15.764761 beta=0.250000
+L=300 K=25 MAXK:20 recall: 0.763250 map: 0.000000 indexing time: 0.000000 search time: 16.409669 beta=0.250000
+L=300 K=26 MAXK:20 recall: 0.795750 map: 0.000000 indexing time: 0.000000 search time: 16.883256 beta=0.250000
+L=300 K=27 MAXK:20 recall: 0.802000 map: 0.000000 indexing time: 0.000000 search time: 16.908815 beta=0.250000
+L=300 K=28 MAXK:20 recall: 0.749250 map: 0.000000 indexing time: 0.000000 search time: 16.298692 beta=0.250000
+L=300 K=29 MAXK:20 recall: 0.710250 map: 0.000000 indexing time: 0.000000 search time: 15.936532 beta=0.250000
+L=300 K=30 MAXK:20 recall: 0.719500 map: 0.000000 indexing time: 0.000000 search time: 15.975223 beta=0.250000
+L=300 K=1 MAXK:20 recall: 0.518250 map: 0.000000 indexing time: 0.000000 search time: 17.305667 beta=0.500000
+L=300 K=2 MAXK:20 recall: 0.554250 map: 0.000000 indexing time: 0.000000 search time: 18.061280 beta=0.500000
+L=300 K=3 MAXK:20 recall: 0.675750 map: 0.000000 indexing time: 0.000000 search time: 22.283775 beta=0.500000
+L=300 K=4 MAXK:20 recall: 0.690250 map: 0.000000 indexing time: 0.000000 search time: 22.759425 beta=0.500000
+L=300 K=5 MAXK:20 recall: 0.698000 map: 0.000000 indexing time: 0.000000 search time: 23.129213 beta=0.500000
+L=300 K=6 MAXK:20 recall: 0.758750 map: 0.000000 indexing time: 0.000000 search time: 24.854963 beta=0.500000
+L=300 K=7 MAXK:20 recall: 0.759250 map: 0.000000 indexing time: 0.000000 search time: 25.167363 beta=0.500000
+L=300 K=8 MAXK:20 recall: 0.759250 map: 0.000000 indexing time: 0.000000 search time: 25.158669 beta=0.500000
+L=300 K=9 MAXK:20 recall: 0.773000 map: 0.000000 indexing time: 0.000000 search time: 25.846434 beta=0.500000
+L=300 K=10 MAXK:20 recall: 0.784250 map: 0.000000 indexing time: 0.000000 search time: 26.802172 beta=0.500000
+L=300 K=11 MAXK:20 recall: 0.784000 map: 0.000000 indexing time: 0.000000 search time: 27.211176 beta=0.500000
+L=300 K=12 MAXK:20 recall: 0.775250 map: 0.000000 indexing time: 0.000000 search time: 27.637133 beta=0.500000
+L=300 K=13 MAXK:20 recall: 0.771500 map: 0.000000 indexing time: 0.000000 search time: 28.018015 beta=0.500000
+L=300 K=14 MAXK:20 recall: 0.819250 map: 0.000000 indexing time: 0.000000 search time: 29.347346 beta=0.500000
+L=300 K=15 MAXK:20 recall: 0.812750 map: 0.000000 indexing time: 0.000000 search time: 28.977692 beta=0.500000
+L=300 K=16 MAXK:20 recall: 0.824750 map: 0.000000 indexing time: 0.000000 search time: 29.430585 beta=0.500000
+L=300 K=17 MAXK:20 recall: 0.855250 map: 0.000000 indexing time: 0.000000 search time: 34.237031 beta=0.500000
+L=300 K=18 MAXK:20 recall: 0.877000 map: 0.000000 indexing time: 0.000000 search time: 40.395442 beta=0.500000
+L=300 K=19 MAXK:20 recall: 0.870000 map: 0.000000 indexing time: 0.000000 search time: 39.500884 beta=0.500000
+L=300 K=20 MAXK:20 recall: 0.888250 map: 0.000000 indexing time: 0.000000 search time: 37.975602 beta=0.500000
+L=300 K=21 MAXK:20 recall: 0.905250 map: 0.000000 indexing time: 0.000000 search time: 40.621556 beta=0.500000
+L=300 K=22 MAXK:20 recall: 0.918499 map: 0.000000 indexing time: 0.000000 search time: 37.743852 beta=0.500000
+L=300 K=23 MAXK:20 recall: 0.913000 map: 0.000000 indexing time: 0.000000 search time: 38.522729 beta=0.500000
+L=300 K=24 MAXK:20 recall: 0.936250 map: 0.000000 indexing time: 0.000000 search time: 42.789782 beta=0.500000
+L=300 K=25 MAXK:20 recall: 0.974000 map: 0.000000 indexing time: 0.000000 search time: 45.927625 beta=0.500000
+L=300 K=26 MAXK:20 recall: 0.985000 map: 0.000000 indexing time: 0.000000 search time: 45.889252 beta=0.500000
+L=300 K=27 MAXK:20 recall: 0.982000 map: 0.000000 indexing time: 0.000000 search time: 46.268318 beta=0.500000
+L=300 K=28 MAXK:20 recall: 0.981000 map: 0.000000 indexing time: 0.000000 search time: 47.224625 beta=0.500000
+L=300 K=29 MAXK:20 recall: 0.977500 map: 0.000000 indexing time: 0.000000 search time: 44.154731 beta=0.500000
+L=300 K=30 MAXK:20 recall: 0.983250 map: 0.000000 indexing time: 0.000000 search time: 39.909503 beta=0.500000
